@@ -38,6 +38,7 @@ for game, id, colon, val in reSkills: # For loop til å returnere iterasjon av r
                     
                     
                 c += 1
+                
     if check:
         # print(f"{id}: {val}")
         sum_ID.append(id) # Legg til alle gyldige spill ID
