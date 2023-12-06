@@ -28,25 +28,20 @@ for game, id, colon, val in reSkills: # For loop til å returnere iterasjon av r
                 if color[c] in z:
                     stripping = z.strip() # Fjern whitespace fra begynnelse og til slutt
                     splitting = stripping.split(" ") # separer string " " til list: e.g fra        "5 blue" >>> ['5', 'blue']  
-                    print(splitting, z)
+                    # print(splitting, z)
 
                     # Hvis farge er rød og høyere enn 12, sett "check = False" som betyr å ikke legg til spill ID
-                    if color[c] == "red":
-                        if int(splitting[0]) > 12:
-                            check = False
                     # Hvis farge er grønn og høyere enn 13, sett "check = False" som betyr å ikke legg til spill ID
-                    elif color[c] == "green":
-                        if int(splitting[0]) > 13:
-                            check = False
                     # Hvis farge er blå og høyere enn 14, sett "check = False" som betyr å ikke legg til spill ID
-                    elif color[c] == "blue":
-                        if int(splitting[0]) > 14:
-                            check = False
+                    if color[c] == "red" and int(splitting[0]) > 12 or color[c] == "green" and int(splitting[0]) > 13 or color[c] == "blue" and int(splitting[0]) > 14:
+                        check = False
+                    
                     
                 c += 1
+                
     if check:
         # print(f"{id}: {val}")
         sum_ID.append(id) # Legg til alle gyldige spill ID
 
-answer = [int(sum_ID[y]) for y in range(0, len(sum_ID))]            # Konverter string til integer til å summere antall spill ID
-print("Final answer for day 2:", sum(answer), "|", type(answer))
+
+print("Final answer for day 2:", sum([int(sum_ID[y]) for y in range(0, len(sum_ID))]))   # Konverter string til integer til å summere antall spill ID
