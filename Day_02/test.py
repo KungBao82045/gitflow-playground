@@ -5,8 +5,13 @@ reading = open("Day_02/day2.txt").read()
 
 reSkills = re.findall("([Game]{4})\s(\d{1,})(:\s)(.+)", reading)
 
+
 sum_ID = ""
 id_collect = ""
+
+
+for x in reSkills:
+    print(x)
 
 for game, id, colon, val in reSkills:
 
