@@ -2,7 +2,7 @@
 
 
 def partOne():
-    reading = open("day1.txt", "r")
+    reading = open("Day_01/day1.txt", "r")
     calibration = ""
 
     for x in reading.read():
@@ -35,7 +35,7 @@ def partOne():
 
 
 def partTwo():
-    reading = open("day1.txt", "r")
+    reading = open("Day_01/day1.txt", "r")
     listOfNums = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     calibration = ""
 
@@ -96,7 +96,7 @@ def partTwo():
     # print(modifiedListedString)
 
     answer = [int(modifiedListedString[y]) for y in range(0, len(modifiedListedString))]
-    print("Final answer for part 2:", sum(answer))
+    print("Final answer for part 2:", sum(answer), "|", type(answer))
 
 
 partOne()
