@@ -96,7 +96,7 @@ def partTwo():
     # print(modifiedListedString)
 
     answer = [int(modifiedListedString[y]) for y in range(0, len(modifiedListedString))]
-    print("Final answer for part 2:", sum(answer))
+    print("Final answer for part 2:", sum(answer), "|", type(answer))
 
 
 partOne()
