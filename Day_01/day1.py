@@ -48,13 +48,8 @@ def partTwo():
                 if i > 9:
                     i = 0
                     count += 1
-                if y.startswith(listOfNums[i], count):
+                if y.startswith(listOfNums[i], count) or y.startswith(str(i), count):
                     # print(f"({count}) String:", y, listOfNums[i], count)
-                    calibration += str(i)
-                    i += 1
-                    count -= 1
-                elif y.startswith(str(i), count):
-                    # print(f"({count}) Number:", y, i, count)
                     calibration += str(i)
                     i += 1
                     count -= 1
@@ -95,8 +90,7 @@ def partTwo():
     modifiedListedString = toString.split(",")[:-1]
     # print(modifiedListedString)
 
-    answer = [int(modifiedListedString[y]) for y in range(0, len(modifiedListedString))]
-    print("Final answer for part 2:", sum(answer), "|", type(answer))
+    print("Final answer for part 2:", sum([int(modifiedListedString[y]) for y in range(0, len(modifiedListedString))]), "|", type([int(modifiedListedString[y]) for y in range(0, len(modifiedListedString))]))
 
 
 partOne()
